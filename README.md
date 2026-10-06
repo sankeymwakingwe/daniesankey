@@ -23,7 +23,7 @@ images/lifestyle/01.jpg … 06.jpg  ← gallery
 ```
 
 Until a photo exists, that spot shows a dark gradient, so the site never looks broken.
-Tip: export covers at around 2400px wide (JPG, quality ~80) so they stay sharp on big screens and load quickly.
+You can upload photos at full size, straight from a camera or phone. Each time the site publishes, it automatically resizes the published copies to at most 2400px and compresses them (about 0.2–0.8 MB each), so the site stays fast. GitHub's web uploader accepts files up to 25 MB.
 
 ## Pages
 

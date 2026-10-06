@@ -31,6 +31,16 @@ jobs:
           # Stamp each deploy's version on the CSS/JS links so browsers never use a stale copy.
           sed -i "s/?v=dev/?v=${GITHUB_SHA::7}/g" _site/*.html
 
+      # Photos can be uploaded straight from a camera or phone: the published copies
+      # are resized to at most 2400px and compressed. The originals in the repo stay untouched.
+      - name: Compress photos
+        run: |
+          command -v mogrify >/dev/null || (sudo apt-get update -q && sudo apt-get install -y -q imagemagick)
+          find _site/images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -exec \
+            mogrify -auto-orient -resize '2400x2400>' -strip -interlace Plane -sampling-factor 4:2:0 -quality 82 {} +
+          find _site/images -type f -iname '*.png' -exec mogrify -resize '2400x2400>' -strip {} +
+          du -sh _site/images
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
