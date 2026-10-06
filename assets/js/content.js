@@ -66,6 +66,15 @@ window.SITE = {
       images: ["images/commercial/01.jpg", "images/commercial/02.jpg", "images/commercial/03.jpg", "images/commercial/04.jpg", "images/commercial/05.jpg", "images/commercial/06.jpg", "images/commercial/07.jpg", "images/commercial/08.jpg", "images/commercial/09.jpg", "images/commercial/10.jpg", "images/commercial/11.jpg", "images/commercial/12.jpg"],
     },
     {
+      slug: "aerial",
+      title: "Aerial",
+      cover: "images/aerial/01.jpg",
+      // The boat sits off-centre in the wide cover, so phones use the centred dhow shot.
+      coverMobile: "images/aerial/02.jpg",
+      fallback: "radial-gradient(ellipse at 50% 40%, #2a9db0 0%, #0f4a55 50%, #051a1e 100%)",
+      images: ["images/aerial/02.jpg", "images/aerial/01.jpg", "images/aerial/03.jpg"],
+    },
+    {
       slug: "portraits",
       title: "Portraits",
       cover: "images/hero.jpg",
