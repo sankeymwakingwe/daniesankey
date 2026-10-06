@@ -139,17 +139,15 @@
     document.title = `${cat.title} — ${fullName}`;
     const idx = S.categories.indexOf(cat);
     const next = S.categories[(idx + 1) % S.categories.length];
+    // The cover is always one of the grid photos, so it is never shown twice.
+    const photos = cat.images.includes(cat.cover) ? cat.images : [cat.cover, ...cat.images];
 
     main.innerHTML = `
-      <section class="slide is-active hero">
-        <div class="slide-media scene-media" style="${sceneBg(cat)}"></div>
-        <div class="slide-text">
-          <a class="back-link" href="work.html">← All Work</a>
-          <h2>${esc(cat.title)}</h2>
-          <span class="scroll-hint">Scroll</span>
-        </div>
-      </section>
-      <section class="gallery">${cat.images
+      <header class="gallery-head">
+        <a class="back-link" href="work.html">← All Work</a>
+        <h1>${esc(cat.title)}</h1>
+      </header>
+      <section class="gallery">${photos
         .map((src, i) => `<button type="button" class="gallery-item reveal" data-i="${i}" aria-label="Open image ${i + 1}"><span class="reveal-media" style="${bg(src, cat.fallback)}"></span></button>`)
         .join("")}</section>
       <a class="next-cat slide" href="gallery.html?c=${next.slug}">
@@ -173,9 +171,9 @@
     document.body.appendChild(lb);
     let cur = 0;
     const show = (i) => {
-      cur = (i + cat.images.length) % cat.images.length;
-      lb.querySelector(".lb-img").style.cssText = bg(cat.images[cur], cat.fallback);
-      lb.querySelector(".lb-count").textContent = `${cur + 1} / ${cat.images.length}`;
+      cur = (i + photos.length) % photos.length;
+      lb.querySelector(".lb-img").style.cssText = bg(photos[cur], cat.fallback);
+      lb.querySelector(".lb-count").textContent = `${cur + 1} / ${photos.length}`;
       lb.hidden = false;
       document.body.classList.add("no-scroll");
     };

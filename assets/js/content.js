@@ -52,7 +52,7 @@ window.SITE = {
     {
       slug: "couples",
       title: "Couples",
-      cover: "images/couples/cover.jpg",
+      cover: "images/couples/02.jpg",
       // Optional upright photo used on phones instead of the wide cover.
       coverMobile: "images/couples/01.jpg",
       fallback: "radial-gradient(ellipse at 55% 35%, #2f7d86 0%, #123a40 50%, #061214 100%)",
@@ -61,7 +61,7 @@ window.SITE = {
     {
       slug: "commercial",
       title: "Commercial",
-      cover: "images/commercial/cover.jpg",
+      cover: "images/commercial/01.jpg",
       fallback: "radial-gradient(ellipse at 50% 30%, #5b6670 0%, #232a30 50%, #0a0c0e 100%)",
       images: ["images/commercial/01.jpg", "images/commercial/02.jpg", "images/commercial/03.jpg", "images/commercial/04.jpg", "images/commercial/05.jpg", "images/commercial/06.jpg", "images/commercial/07.jpg", "images/commercial/08.jpg", "images/commercial/09.jpg", "images/commercial/10.jpg", "images/commercial/11.jpg", "images/commercial/12.jpg"],
     },
@@ -82,23 +82,23 @@ window.SITE = {
       images: ["images/hero.jpg"],
     },
     {
-      slug: "editorial",
-      title: "Editorial",
-      cover: "images/editorial/cover.jpg",
-      fallback: "radial-gradient(ellipse at 65% 40%, #7a2e2a 0%, #3a1514 50%, #0e0606 100%)",
-      images: ["images/editorial/01.jpg", "images/editorial/02.jpg", "images/editorial/03.jpg", "images/editorial/04.jpg", "images/editorial/05.jpg", "images/editorial/06.jpg"],
+      slug: "weddings",
+      title: "Weddings",
+      cover: "images/weddings/01.jpg",
+      fallback: "radial-gradient(ellipse at 50% 35%, #8f7d6a 0%, #3a3128 50%, #0f0c0a 100%)",
+      images: ["images/weddings/01.jpg", "images/weddings/02.jpg", "images/weddings/03.jpg", "images/weddings/04.jpg", "images/weddings/05.jpg", "images/weddings/06.jpg"],
     },
     {
       slug: "fashion",
       title: "Fashion",
-      cover: "images/fashion/cover.jpg",
+      cover: "images/fashion/01.jpg",
       fallback: "radial-gradient(ellipse at 50% 30%, #3f5a5c 0%, #1a2627 50%, #070a0a 100%)",
       images: ["images/fashion/01.jpg", "images/fashion/02.jpg", "images/fashion/03.jpg", "images/fashion/04.jpg", "images/fashion/05.jpg", "images/fashion/06.jpg"],
     },
     {
       slug: "events",
       title: "Events",
-      cover: "images/events/cover.jpg",
+      cover: "images/events/01.jpg",
       fallback: "radial-gradient(ellipse at 35% 45%, #8c6d3a 0%, #3a2c15 50%, #0f0b05 100%)",
       images: ["images/events/01.jpg", "images/events/02.jpg", "images/events/03.jpg", "images/events/04.jpg", "images/events/05.jpg", "images/events/06.jpg"],
     },
