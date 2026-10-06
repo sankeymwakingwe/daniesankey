@@ -45,9 +45,9 @@ window.SITE = {
     {
       slug: "lifestyle",
       title: "Lifestyle",
-      cover: "images/hero.jpg",
+      cover: "images/lifestyle/01.jpg",
       fallback: "radial-gradient(ellipse at 60% 35%, #8a5a3c 0%, #3b2418 45%, #120b08 100%)",
-      images: ["images/lifestyle/01.jpg", "images/hero.jpg", "images/lifestyle/02.jpg", "images/lifestyle/03.jpg", "images/lifestyle/04.jpg", "images/lifestyle/05.jpg"],
+      images: ["images/lifestyle/01.jpg", "images/lifestyle/02.jpg", "images/lifestyle/03.jpg", "images/lifestyle/04.jpg", "images/lifestyle/05.jpg"],
     },
     {
       slug: "couples",
@@ -68,9 +68,9 @@ window.SITE = {
     {
       slug: "portraits",
       title: "Portraits",
-      cover: "images/portraits/cover.jpg",
+      cover: "images/hero.jpg",
       fallback: "radial-gradient(ellipse at 40% 30%, #6d6a64 0%, #2b2a28 50%, #0b0b0b 100%)",
-      images: ["images/portraits/01.jpg", "images/portraits/02.jpg", "images/portraits/03.jpg", "images/portraits/04.jpg", "images/portraits/05.jpg", "images/portraits/06.jpg"],
+      images: ["images/hero.jpg"],
     },
     {
       slug: "editorial",
