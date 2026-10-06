@@ -73,6 +73,15 @@ window.SITE = {
       images: ["images/lifestyle/01.jpg", "images/lifestyle/02.jpg", "images/lifestyle/03.jpg", "images/lifestyle/04.jpg", "images/lifestyle/05.jpg", "images/lifestyle/06.jpg"],
     },
     {
+      slug: "couples",
+      title: "Couples",
+      cover: "images/couples/cover.jpg",
+      // Optional upright photo used on phones instead of the wide cover.
+      coverMobile: "images/couples/01.jpg",
+      fallback: "radial-gradient(ellipse at 55% 35%, #2f7d86 0%, #123a40 50%, #061214 100%)",
+      images: ["images/couples/01.jpg", "images/couples/02.jpg", "images/couples/03.jpg", "images/couples/04.jpg", "images/couples/05.jpg"],
+    },
+    {
       slug: "portraits",
       title: "Portraits",
       cover: "images/portraits/cover.jpg",

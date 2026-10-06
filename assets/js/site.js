@@ -18,6 +18,12 @@
   const spaced = (word) => [...word].map((c) => `<span>${esc(c)}</span>`).join("");
   // Photo layered over a gradient: if the photo is missing, the gradient shows.
   const bg = (img, fallback) => `background-image: url('${img}'), ${fallback || "linear-gradient(#1a1a1a,#0a0a0a)"}`;
+  // Category scenes: the CSS swaps in `coverMobile` (an upright photo) on phones when one is set.
+  const sceneBg = (cat) => {
+    // Absolute URLs: a url() inside a CSS variable would otherwise resolve against the stylesheet's folder.
+    const layer = (img) => `url('${new URL(img, location.href).href}'), ${cat.fallback || "linear-gradient(#1a1a1a,#0a0a0a)"}`;
+    return `--bg: ${layer(cat.cover)}; --bg-mobile: ${layer(cat.coverMobile || cat.cover)}`;
+  };
   const fullName = S.name;
 
   /* ── Header: centred nav ───────────────────────────────── */
@@ -67,7 +73,7 @@
       S.categories
         .map(
           (cat, i) => `<section class="slide" id="${cat.slug}">
-            <div class="slide-media" style="${bg(cat.cover, cat.fallback)}"></div>
+            <div class="slide-media scene-media" style="${sceneBg(cat)}"></div>
             <div class="slide-text">
               <span class="slide-index">Chapter ${String(i + 1).padStart(2, "0")}</span>
               <h2>${esc(cat.title)}</h2>
@@ -138,7 +144,7 @@
 
     main.innerHTML = `
       <section class="slide is-active hero">
-        <div class="slide-media" style="${bg(cat.cover, cat.fallback)}"></div>
+        <div class="slide-media scene-media" style="${sceneBg(cat)}"></div>
         <div class="slide-text">
           <a class="back-link" href="work.html">← All Work</a>
           <h2>${esc(cat.title)}</h2>
@@ -149,7 +155,7 @@
         .map((src, i) => `<button type="button" class="gallery-item reveal" data-i="${i}" aria-label="Open image ${i + 1}"><span class="reveal-media" style="${bg(src, cat.fallback)}"></span></button>`)
         .join("")}</section>
       <a class="next-cat slide" href="gallery.html?c=${next.slug}">
-        <div class="slide-media" style="${bg(next.cover, next.fallback)}"></div>
+        <div class="slide-media scene-media" style="${sceneBg(next)}"></div>
         <div class="slide-text">
           <span class="slide-index">Next chapter</span>
           <h2>${esc(next.title)}</h2>

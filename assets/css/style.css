@@ -135,6 +135,8 @@ svg { width: 18px; height: 18px; flex: none; }
   transition: transform 9s cubic-bezier(0.2, 0.6, 0.2, 1), filter 1.6s var(--ease);
 }
 /* Colour grade: teal shadows, warm highlights. */
+.scene-media { background-image: var(--bg); }
+@media (max-width: 860px) { .scene-media { background-image: var(--bg-mobile, var(--bg)); } }
 .slide-media::before {
   content: "";
   position: absolute;
