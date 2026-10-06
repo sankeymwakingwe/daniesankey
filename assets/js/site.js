@@ -5,7 +5,8 @@
 
   const icon = {
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>',
-    pinterest: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10.5 20.5 12 13m0 0c.3 1.3 1.4 2 2.6 2 2.2 0 3.6-2 3.6-4.6C18.2 7.6 15.8 6 13 6 9.6 6 7.6 8.4 7.6 11c0 1.1.4 2.2 1.2 2.7"/></svg>',
+    linkedin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg>',
+    whatsapp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8a5 5 0 0 1-2.3-2.3l.8-1-1-2z"/></svg>',
     phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>',
     mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
     pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
@@ -212,11 +213,12 @@
         <span class="slide-index">Contact</span>
         <h1>Let's tell your story.</h1>
         <ul class="contact-list">
-          <li><a href="mailto:${c.email}">${icon.mail}${esc(c.email)}</a></li>
-          <li><a href="tel:${c.phone.replace(/[^\d+]/g, "")}">${icon.phone}${esc(c.phone)}</a></li>
-          <li><a href="${c.mapUrl}" target="_blank" rel="noopener">${icon.pin}${esc(c.location)}</a></li>
+          ${c.email ? `<li><a href="mailto:${c.email}">${icon.mail}${esc(c.email)}</a></li>` : ""}
+          ${c.whatsapp ? `<li><a href="https://wa.me/${c.whatsapp}" target="_blank" rel="noopener">${icon.whatsapp}WhatsApp ${esc(c.phone)}</a></li>` : ""}
+          ${c.phone ? `<li><a href="tel:${c.phone.replace(/[^\d+]/g, "")}">${icon.phone}Call ${esc(c.phone)}</a></li>` : ""}
+          ${c.location ? `<li><a href="${c.mapUrl}" target="_blank" rel="noopener">${icon.pin}${esc(c.location)}</a></li>` : ""}
           ${S.social.instagram ? `<li><a href="${S.social.instagram}" target="_blank" rel="noopener">${icon.instagram}Instagram</a></li>` : ""}
-          ${S.social.pinterest ? `<li><a href="${S.social.pinterest}" target="_blank" rel="noopener">${icon.pinterest}Pinterest</a></li>` : ""}
+          ${S.social.linkedin ? `<li><a href="${S.social.linkedin}" target="_blank" rel="noopener">${icon.linkedin}LinkedIn</a></li>` : ""}
         </ul>
         <form class="contact-form">
           <input name="name" placeholder="Name" required>
@@ -244,7 +246,7 @@
         <h1>${esc(v.heading)}</h1>
         <p>${esc(v.intro)}</p>
         <ul class="packages">${v.packages
-          .map((pk) => `<li><h3>${esc(pk.name)}</h3><span class="price">${esc(pk.price)}</span><p>${esc(pk.details)}</p></li>`)
+          .map((pk) => `<li><h3>${esc(pk.name)}</h3>${pk.price ? `<span class="price">${esc(pk.price)}</span>` : ""}<p>${esc(pk.details)}</p></li>`)
           .join("")}</ul>
         <a class="view-link" href="contact.html">Enquire ${icon.arrow}</a>
       </div>

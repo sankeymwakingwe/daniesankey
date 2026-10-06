@@ -12,16 +12,19 @@ window.SITE = {
   tagline: "Photographer & Storyteller",
 
   contact: {
-    phone: "+1 000 000 0000",
-    email: "hello@example.com",
-    location: "Your City, Country",
-    // Opens when someone taps the location on the Contact page.
-    mapUrl: "https://maps.google.com/?q=Your+City",
+    email: "daniesankey@gmail.com",
+    phone: "+255 659 936 142",
+    // WhatsApp number in international format, digits only ("" to hide).
+    whatsapp: "255659936142",
+    // Leave location "" to hide it; mapUrl opens when someone taps it.
+    location: "",
+    mapUrl: "",
   },
 
+  // Leave any link "" to hide it.
   social: {
-    instagram: "https://instagram.com/",
-    pinterest: "https://pinterest.com/",
+    instagram: "https://www.instagram.com/daniesankey",
+    linkedin: "https://www.linkedin.com/in/sankey-daniel-258a2b1b3/",
   },
 
   about: {
@@ -36,11 +39,12 @@ window.SITE = {
   investment: {
     image: "images/investment.jpg",
     heading: "Investment",
-    intro: "Every session is tailored to you. These packages are a starting point; get in touch for a custom quote.",
+    intro: "Every session is tailored to you. Get in touch and I'll put together a quote for your project.",
+    // Add `price: "From ..."` to a package to show a price; leave it out to hide it.
     packages: [
-      { name: "Portrait Session", price: "From $000", details: "1 hour, one location, 20 edited images." },
-      { name: "Lifestyle & Editorial", price: "From $000", details: "Half day, up to three looks, 50 edited images." },
-      { name: "Events", price: "From $000", details: "Full-day coverage, online gallery, 300+ edited images." },
+      { name: "Portrait Session", details: "1 hour, one location, 20 edited images." },
+      { name: "Lifestyle & Editorial", details: "Half day, up to three looks, 50 edited images." },
+      { name: "Events", details: "Full-day coverage, online gallery, 300+ edited images." },
     ],
   },
 

@@ -33,7 +33,7 @@ Tip: export covers at around 2400px wide (JPG, quality ~80) so they stay sharp o
 | Portfolio (all categories) | `work.html` |
 | Category gallery + lightbox | `gallery.html?c=<slug>` |
 | About | `about.html` |
-| Investment (packages and prices) | `investment.html` |
+| Investment (packages; prices optional) | `investment.html` |
 | Clients (client names and testimonials) | `clients.html` |
 | Contact (opens the visitor's email app) | `contact.html` |
 
