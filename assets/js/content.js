@@ -82,6 +82,13 @@ window.SITE = {
       images: ["images/couples/01.jpg", "images/couples/02.jpg", "images/couples/03.jpg", "images/couples/04.jpg", "images/couples/05.jpg"],
     },
     {
+      slug: "commercial",
+      title: "Commercial",
+      cover: "images/commercial/cover.jpg",
+      fallback: "radial-gradient(ellipse at 50% 30%, #5b6670 0%, #232a30 50%, #0a0c0e 100%)",
+      images: ["images/commercial/01.jpg", "images/commercial/02.jpg", "images/commercial/03.jpg", "images/commercial/04.jpg", "images/commercial/05.jpg", "images/commercial/06.jpg"],
+    },
+    {
       slug: "portraits",
       title: "Portraits",
       cover: "images/portraits/cover.jpg",
