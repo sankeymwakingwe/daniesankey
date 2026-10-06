@@ -36,29 +36,6 @@ window.SITE = {
     ],
   },
 
-  investment: {
-    image: "images/investment.jpg",
-    heading: "Investment",
-    intro: "Every session is tailored to you. Get in touch and I'll put together a quote for your project.",
-    // Add `price: "From ..."` to a package to show a price; leave it out to hide it.
-    packages: [
-      { name: "Portrait Session", details: "1 hour, one location, 20 edited images." },
-      { name: "Lifestyle & Editorial", details: "Half day, up to three looks, 50 edited images." },
-      { name: "Events", details: "Full-day coverage, online gallery, 300+ edited images." },
-    ],
-  },
-
-  clients: {
-    image: "images/clients.jpg",
-    heading: "Clients",
-    intro: "A few of the people and brands I've had the pleasure of working with.",
-    names: ["Client One", "Client Two", "Client Three", "Client Four", "Client Five", "Client Six"],
-    testimonials: [
-      { quote: "Add a short testimonial from a happy client here.", by: "Client name" },
-      { quote: "And another one, so visitors can hear it from someone else.", by: "Client name" },
-    ],
-  },
-
   /*
    * Each category is one full-screen section on the home page and
    * gets its own gallery page. `fallback` is the gradient shown

@@ -30,9 +30,7 @@
   const links = [
     ["index.html", "Home", "home"],
     ["about.html", "About", "about"],
-    ["work.html", "Portfolio", "work"],
-    ["investment.html", "Investment", "investment"],
-    ["clients.html", "Clients", "clients"],
+    ["work.html", "Work", "work"],
     ["contact.html", "Contact", "contact"],
   ];
   const navLink = ([href, label, key]) => {
@@ -40,14 +38,14 @@
     return `<a class="nav-link" href="${href}"${current ? ' aria-current="page"' : ""}>${label}</a>`;
   };
 
-  // Three links, the name, three links. Phones get the name and a menu button.
+  // Two links, the name, two links. Phones get the name and a menu button.
   document.body.insertAdjacentHTML(
     "afterbegin",
     `<header class="site-header">
       <nav class="main-nav" aria-label="Main">
-        ${links.slice(0, 3).map(navLink).join("")}
+        ${links.slice(0, 2).map(navLink).join("")}
         <a class="logo" href="index.html">${esc(fullName)}</a>
-        ${links.slice(3).map(navLink).join("")}
+        ${links.slice(2).map(navLink).join("")}
         <button type="button" class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
       </nav>
     </header>
@@ -299,39 +297,6 @@
       const body = `${f.get("message")}\n\n— ${f.get("name")} (${f.get("email")})`;
       location.href = `mailto:${c.email}?subject=${encodeURIComponent("Enquiry from " + f.get("name"))}&body=${encodeURIComponent(body)}`;
     });
-  }
-
-  if (page === "investment") {
-    const v = S.investment;
-    main.innerHTML = `<section class="slide is-active panel">
-      <div class="slide-media" style="${bg(v.image, S.categories[2 % S.categories.length].fallback)}"></div>
-      <div class="panel-text panel-wide">
-        <span class="slide-index">Investment</span>
-        <h1>${esc(v.heading)}</h1>
-        <p>${esc(v.intro)}</p>
-        <ul class="packages">${v.packages
-          .map((pk) => `<li><h3>${esc(pk.name)}</h3>${pk.price ? `<span class="price">${esc(pk.price)}</span>` : ""}<p>${esc(pk.details)}</p></li>`)
-          .join("")}</ul>
-        <a class="view-link" href="contact.html">Enquire ${icon.arrow}</a>
-      </div>
-    </section>`;
-  }
-
-  if (page === "clients") {
-    const v = S.clients;
-    main.innerHTML = `<section class="slide is-active panel">
-      <div class="slide-media" style="${bg(v.image, S.categories[3 % S.categories.length].fallback)}"></div>
-      <div class="panel-text panel-wide">
-        <span class="slide-index">Clients</span>
-        <h1>${esc(v.heading)}</h1>
-        <p>${esc(v.intro)}</p>
-        <ul class="client-names">${v.names.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>
-        ${v.testimonials
-          .map((t) => `<blockquote class="testimonial"><p>“${esc(t.quote)}”</p><cite>${esc(t.by)}</cite></blockquote>`)
-          .join("")}
-        <a class="view-link" href="contact.html">Work with me ${icon.arrow}</a>
-      </div>
-    </section>`;
   }
 
   /* ── Cinematic layer ────────────────────────────────────── */

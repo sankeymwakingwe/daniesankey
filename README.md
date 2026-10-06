@@ -9,7 +9,7 @@ Cinematic touches: an opening title card (once per visit), letterbox bars that o
 Edit **one file**: [`assets/js/content.js`](assets/js/content.js). It holds:
 
 - your name (shown as the logo in the middle of the nav), phone, email, location, and social links
-- the About text, Investment packages, and Clients list and testimonials
+- the About text
 - the photo categories (Lifestyle, Portraits, …). Each one is a full-screen section on the home page and gets its own gallery page. Add, remove, rename, or reorder them freely.
 
 ## Adding photos
@@ -30,11 +30,9 @@ You can upload photos at full size, straight from a camera or phone. Each time t
 | Page | File |
 | --- | --- |
 | Home (full-screen sections) | `index.html` |
-| Portfolio (all categories) | `work.html` |
+| Work (all categories) | `work.html` |
 | Category gallery + lightbox | `gallery.html?c=<slug>` |
 | About | `about.html` |
-| Investment (packages; prices optional) | `investment.html` |
-| Clients (client names and testimonials) | `clients.html` |
 | Contact (opens the visitor's email app) | `contact.html` |
 
 ## Run locally
