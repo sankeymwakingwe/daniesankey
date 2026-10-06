@@ -86,7 +86,7 @@ window.SITE = {
       title: "Commercial",
       cover: "images/commercial/cover.jpg",
       fallback: "radial-gradient(ellipse at 50% 30%, #5b6670 0%, #232a30 50%, #0a0c0e 100%)",
-      images: ["images/commercial/01.jpg"],
+      images: ["images/commercial/01.jpg", "images/commercial/02.jpg", "images/commercial/03.jpg", "images/commercial/04.jpg"],
     },
     {
       slug: "portraits",

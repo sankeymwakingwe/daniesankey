@@ -152,7 +152,11 @@
         </div>
       </section>
       <section class="gallery">${cat.images
-        .map((src, i) => `<button type="button" class="gallery-item reveal" data-i="${i}" aria-label="Open image ${i + 1}"><span class="reveal-media" style="${bg(src, cat.fallback)}"></span></button>`)
+        .map(
+          (src, i) => `<button type="button" class="gallery-item reveal" data-i="${i}" style="background: ${cat.fallback}" aria-label="Open image ${i + 1}">
+            <img class="reveal-media" src="${src}" alt="${esc(cat.title)} photo ${i + 1}" loading="lazy">
+          </button>`
+        )
         .join("")}</section>
       <a class="next-cat slide" href="gallery.html?c=${next.slug}">
         <div class="slide-media scene-media" style="${sceneBg(next)}"></div>
@@ -162,6 +166,60 @@
           <span class="view-link">View Work ${icon.arrow}</span>
         </div>
       </a>`;
+
+    // Justified rows: photos keep their shape, each full row shares one height and spans the width.
+    // The last row keeps the target height rather than blowing one photo up. Phones get one column.
+    const gallery = main.querySelector(".gallery");
+    const items = [...gallery.children];
+    items.forEach((it) => {
+      const img = it.querySelector("img");
+      it.ratio = 1.5;
+      const loaded = () => { it.ratio = img.naturalWidth / img.naturalHeight; it.style.setProperty("--r", it.ratio); relayout(); };
+      if (img.complete && img.naturalWidth) loaded();
+      img.addEventListener("load", loaded);
+      img.addEventListener("error", () => { it.ratio = 0.8; it.classList.add("is-missing"); relayout(); });
+    });
+    function layout() {
+      if (innerWidth <= 600) {
+        items.forEach((it) => { it.style.removeProperty("width"); it.style.removeProperty("height"); });
+        return;
+      }
+      const gap = 6;
+      const width = gallery.clientWidth - 2 * gap;
+      const target = innerWidth <= 1100 ? 320 : 420;
+      // Height a run of photos gets when stretched edge to edge.
+      const rowHeight = (a, b) => {
+        let sum = 0;
+        for (let k = a; k < b; k++) sum += items[k].ratio;
+        return (width - gap * (b - a - 1)) / sum;
+      };
+      // Pick the row breaks that keep every row closest to the target height.
+      const n = items.length;
+      const best = [0];
+      const from = [0];
+      for (let b = 1; b <= n; b++) {
+        best[b] = Infinity;
+        for (let a = Math.max(0, b - 8); a < b; a++) {
+          const cost = best[a] + Math.log(rowHeight(a, b) / target) ** 2;
+          if (cost < best[b]) { best[b] = cost; from[b] = a; }
+        }
+      }
+      for (let b = n; b > 0; b = from[b]) {
+        const a = from[b];
+        let h = rowHeight(a, b);
+        // A final row that would balloon (e.g. one lone photo) stays at the target height.
+        if (b === n && h > target * 1.8) h = target;
+        for (let k = a; k < b; k++) { items[k].style.width = `${h * items[k].ratio}px`; items[k].style.height = `${h}px`; }
+      }
+    }
+    let queued = false;
+    function relayout() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; layout(); });
+    }
+    layout();
+    addEventListener("resize", relayout);
 
     // Lightbox
     const lb = document.createElement("div");

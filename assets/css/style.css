@@ -257,23 +257,18 @@ svg { width: 18px; height: 18px; flex: none; }
 .back-link:hover { color: var(--paper); }
 .scroll-hint { display: block; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 38vw;
-  gap: 6px;
-  padding: 6px;
-}
-.gallery-item { position: relative; overflow: hidden; transition: filter 0.4s; }
-.gallery-item .reveal-media {
-  position: absolute;
-  inset: 0;
-  background-size: cover, cover;
-  background-position: center, center;
-}
-.gallery-item:nth-child(6n + 1),
-.gallery-item:nth-child(6n + 5) { grid-row: span 2; }
+/* Justified rows; sizes are set by the gallery code in site.js. */
+.gallery { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px; }
+.gallery-item { position: relative; flex: none; overflow: hidden; transition: filter 0.4s; }
+.gallery-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* A listed photo that hasn't been uploaded yet shows as a gradient tile. */
+.gallery-item.is-missing img { display: none; }
 .gallery-item:hover { filter: brightness(1.1); }
+/* Phones: one full-width column at each photo's natural shape. */
+@media (max-width: 600px) {
+  .gallery-item { width: 100%; aspect-ratio: var(--r, 1.5); }
+  .gallery-item.is-missing { aspect-ratio: 0.8; }
+}
 
 .next-cat { display: flex; }
 
@@ -459,7 +454,6 @@ svg { width: 18px; height: 18px; flex: none; }
   .dots { display: none; }
   .work-grid { grid-template-columns: 1fr; }
   .work-tile { min-height: 80vh; }
-  .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 60vw; }
   .lightbox { grid-template-columns: 44px 1fr 44px; }
 }
 
