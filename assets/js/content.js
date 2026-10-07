@@ -79,7 +79,7 @@ window.SITE = {
       title: "Portraits",
       cover: "images/hero.jpg",
       fallback: "radial-gradient(ellipse at 40% 30%, #6d6a64 0%, #2b2a28 50%, #0b0b0b 100%)",
-      images: ["images/hero.jpg"],
+      images: ["images/hero.jpg", "images/portraits/01.jpg"],
     },
     {
       slug: "weddings",
