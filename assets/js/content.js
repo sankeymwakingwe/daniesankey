@@ -47,7 +47,7 @@ window.SITE = {
       title: "Lifestyle",
       cover: "images/lifestyle/01.jpg",
       fallback: "radial-gradient(ellipse at 60% 35%, #8a5a3c 0%, #3b2418 45%, #120b08 100%)",
-      images: ["images/lifestyle/01.jpg", "images/lifestyle/02.jpg", "images/lifestyle/03.jpg", "images/lifestyle/04.jpg", "images/lifestyle/05.jpg", "images/lifestyle/06.jpg", "images/lifestyle/07.jpg", "images/lifestyle/08.jpg", "images/lifestyle/09.jpg", "images/lifestyle/10.jpg"],
+      images: ["images/lifestyle/01.jpg", "images/lifestyle/02.jpg", "images/lifestyle/03.jpg", "images/lifestyle/04.jpg", "images/lifestyle/05.jpg", "images/lifestyle/06.jpg", "images/lifestyle/07.jpg", "images/lifestyle/08.jpg", "images/lifestyle/09.jpg", "images/lifestyle/10.jpg", "images/lifestyle/11.jpg", "images/lifestyle/12.jpg", "images/lifestyle/13.jpg"],
     },
     {
       slug: "couples",
