@@ -73,7 +73,6 @@
           (cat, i) => `<section class="slide" id="${cat.slug}">
             <div class="slide-media scene-media" style="${sceneBg(cat)}"></div>
             <div class="slide-text">
-              <span class="slide-index">Chapter ${String(i + 1).padStart(2, "0")}</span>
               <h2>${esc(cat.title)}</h2>
               <a class="view-link" href="gallery.html?c=${cat.slug}">View Work ${icon.arrow}</a>
             </div>
@@ -87,17 +86,14 @@
     main.insertAdjacentHTML(
       "beforeend",
       `<div class="hud" aria-hidden="true">
-        <span class="hud-scene">Scene <b>01</b> / ${String(S.categories.length).padStart(2, "0")}</span>
         <span class="hud-tc"><i></i><b>00:00:00:00</b></span>
       </div>`
     );
     const slides = [...main.querySelectorAll(".slide")];
     const dots = [...main.querySelectorAll(".dots a")];
-    const sceneNum = main.querySelector(".hud-scene b");
     main.addEventListener("scene", (e) => {
       const i = slides.indexOf(e.detail);
       dots.forEach((d, j) => d.classList.toggle("is-active", j === i));
-      sceneNum.textContent = String(i + 1).padStart(2, "0");
     });
 
     // Running 24fps timecode, like a camera viewfinder.
@@ -124,7 +120,6 @@
         (cat, i) => `<a class="work-tile reveal" href="gallery.html?c=${cat.slug}">
           <div class="work-tile-media reveal-media" style="${bg(cat.cover, cat.fallback)}"></div>
           <div class="work-tile-text">
-            <span class="slide-index">Chapter ${String(i + 1).padStart(2, "0")}</span>
             <h2>${esc(cat.title)}</h2>
             <span class="view-link">View Work ${icon.arrow}</span>
           </div>
@@ -153,7 +148,7 @@
       <a class="next-cat slide" href="gallery.html?c=${next.slug}">
         <div class="slide-media scene-media" style="${sceneBg(next)}"></div>
         <div class="slide-text">
-          <span class="slide-index">Next chapter</span>
+          <span class="slide-index">Next</span>
           <h2>${esc(next.title)}</h2>
           <span class="view-link">View Work ${icon.arrow}</span>
         </div>

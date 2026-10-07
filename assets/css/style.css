@@ -163,9 +163,9 @@ svg { width: 18px; height: 18px; flex: none; }
   transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
 }
 .is-open .slide.is-active .slide-text > * { opacity: 1; transform: none; }
-.is-open .slide.is-active .slide-text > :nth-child(1) { transition-delay: 0.2s; }
-.is-open .slide.is-active .slide-text > :nth-child(2) { transition-delay: 0s; }
-.is-open .slide.is-active .slide-text > :nth-child(3) { transition-delay: 0.9s; }
+.is-open .slide.is-active .slide-text > .slide-index { transition-delay: 0.2s; }
+.is-open .slide.is-active .slide-text > h2 { transition-delay: 0s; }
+.is-open .slide.is-active .slide-text > .view-link { transition-delay: 0.9s; }
 
 .slide-index { display: block; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 .slide h2,
@@ -413,7 +413,7 @@ svg { width: 18px; height: 18px; flex: none; }
   bottom: 28px;
   z-index: 30;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   font-size: 11px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
