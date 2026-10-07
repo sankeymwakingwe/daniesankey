@@ -47,7 +47,7 @@ window.SITE = {
       title: "Lifestyle",
       cover: "images/lifestyle/01.jpg",
       fallback: "radial-gradient(ellipse at 60% 35%, #8a5a3c 0%, #3b2418 45%, #120b08 100%)",
-      images: ["images/lifestyle/01.jpg", "images/lifestyle/02.jpg", "images/lifestyle/03.jpg", "images/lifestyle/04.jpg", "images/lifestyle/05.jpg"],
+      images: ["images/lifestyle/01.jpg", "images/lifestyle/02.jpg", "images/lifestyle/03.jpg", "images/lifestyle/04.jpg", "images/lifestyle/05.jpg", "images/lifestyle/06.jpg", "images/lifestyle/07.jpg", "images/lifestyle/08.jpg", "images/lifestyle/09.jpg", "images/lifestyle/10.jpg"],
     },
     {
       slug: "couples",
@@ -87,13 +87,6 @@ window.SITE = {
       cover: "images/weddings/01.jpg",
       fallback: "radial-gradient(ellipse at 50% 35%, #8f7d6a 0%, #3a3128 50%, #0f0c0a 100%)",
       images: ["images/weddings/01.jpg", "images/weddings/02.jpg", "images/weddings/03.jpg", "images/weddings/04.jpg", "images/weddings/05.jpg", "images/weddings/06.jpg"],
-    },
-    {
-      slug: "fashion",
-      title: "Fashion",
-      cover: "images/fashion/01.jpg",
-      fallback: "radial-gradient(ellipse at 50% 30%, #3f5a5c 0%, #1a2627 50%, #070a0a 100%)",
-      images: ["images/fashion/01.jpg", "images/fashion/02.jpg", "images/fashion/03.jpg", "images/fashion/04.jpg", "images/fashion/05.jpg", "images/fashion/06.jpg"],
     },
     {
       slug: "events",
