@@ -134,8 +134,8 @@
     document.title = `${cat.title} — ${fullName}`;
     const idx = S.categories.indexOf(cat);
     const next = S.categories[(idx + 1) % S.categories.length];
-    // The cover is always one of the grid photos, so it is never shown twice.
-    const photos = cat.images.includes(cat.cover) ? cat.images : [cat.cover, ...cat.images];
+    // The grid shows exactly the listed photos; a cover left out of the list stays on the home page only.
+    const photos = cat.images;
 
     main.innerHTML = `
       <header class="gallery-head">

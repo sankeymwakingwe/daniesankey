@@ -21,7 +21,7 @@ images/about.jpg
 images/weddings/01.jpg … 06.jpg  ← gallery
 ```
 
-Each section's `cover` (its full-screen photo on the home page) should be one of its gallery photos; if it isn't, the gallery adds it at the start so it still appears exactly once.
+Each section's `cover` is its full-screen photo on the home page. The gallery grid shows exactly the photos in `images`, so list the cover there too only if you want it in the grid.
 
 Until a photo exists, that spot shows a dark gradient, so the site never looks broken.
 You can upload photos at full size, straight from a camera or phone. Each time the site publishes, it automatically resizes the published copies to at most 2400px and compresses them (about 0.2–0.8 MB each), so the site stays fast. GitHub's web uploader accepts files up to 25 MB.
