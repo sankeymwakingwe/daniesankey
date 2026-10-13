@@ -104,14 +104,6 @@
       const f = Math.floor(((performance.now() - t0) / 1000) * 24);
       tc.textContent = `${pad(Math.floor(f / 86400))}:${pad(Math.floor(f / 1440) % 60)}:${pad(Math.floor(f / 24) % 60)}:${pad(f % 24)}`;
     }, 1000 / 24);
-
-    document.addEventListener("keydown", (e) => {
-      if (!["ArrowDown", "ArrowUp", "PageDown", "PageUp"].includes(e.key)) return;
-      e.preventDefault();
-      const cur = Math.max(0, slides.findIndex((s) => s.classList.contains("is-active")));
-      const next = Math.max(0, Math.min(slides.length - 1, cur + (e.key === "ArrowDown" || e.key === "PageDown" ? 1 : -1)));
-      slides[next].scrollIntoView({ behavior: "smooth" });
-    });
   }
 
   if (page === "work") {
@@ -255,18 +247,32 @@
       .join(" ");
   });
 
-  // Every full-screen scene comes alive when it fills most of the screen.
-  const sceneIO = new IntersectionObserver(
+  // Scenes reveal once, as they start to enter the screen, and stay revealed,
+  // so scrolling flows smoothly instead of each photo popping into focus.
+  const revealScene = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
-        e.target.classList.toggle("is-active", e.isIntersecting);
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-active");
+        revealScene.unobserve(e.target);
+      });
+    },
+    { threshold: 0.25 }
+  );
+  // Separately track which scene fills the screen, for the side dots.
+  const currentScene = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
         if (e.isIntersecting) main.dispatchEvent(new CustomEvent("scene", { detail: e.target }));
       });
     },
-    { threshold: 0.6 }
+    { threshold: 0.5 }
   );
   // About/Contact panels can be taller than the screen, so they stay lit.
-  document.querySelectorAll(".slide:not(.panel)").forEach((el) => sceneIO.observe(el));
+  document.querySelectorAll(".slide:not(.panel)").forEach((el) => {
+    revealScene.observe(el);
+    currentScene.observe(el);
+  });
 
   // Tiles and gallery frames wipe in as they enter the screen.
   const revealIO = new IntersectionObserver(

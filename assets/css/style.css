@@ -16,7 +16,6 @@
 *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
-html:has(body[data-page="home"]) { scroll-snap-type: y mandatory; }
 
 body {
   margin: 0;
@@ -121,7 +120,6 @@ svg { width: 18px; height: 18px; flex: none; }
   height: 100vh;
   height: 100svh;
   overflow: hidden;
-  scroll-snap-align: start;
   isolation: isolate;
 }
 .slide-media {
