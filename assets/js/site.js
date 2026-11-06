@@ -25,6 +25,8 @@
     return `--bg: ${layer(cat.cover)}; --bg-mobile: ${layer(cat.coverMobile || cat.cover)}`;
   };
   const fullName = S.name;
+  // Sections marked hidden are turned off everywhere (home, Work page, galleries, "Next" links).
+  S.categories = S.categories.filter((c) => !c.hidden);
 
   /* ── Header: centred nav ───────────────────────────────── */
   const links = [
@@ -103,7 +105,7 @@
     setInterval(() => {
       const f = Math.floor(((performance.now() - t0) / 1000) * 24);
       tc.textContent = `${pad(Math.floor(f / 86400))}:${pad(Math.floor(f / 1440) % 60)}:${pad(Math.floor(f / 24) % 60)}:${pad(f % 24)}`;
-    }, 1000 / 24);
+    }, 125); // 8 updates a second is plenty for a small readout and keeps scrolling smooth
   }
 
   if (page === "work") {

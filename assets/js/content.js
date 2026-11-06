@@ -37,6 +37,8 @@ window.SITE = {
   },
 
   /*
+   * Add `hidden: true` to a section to turn it off without deleting it.
+   *
    * Each category is one full-screen section on the home page and
    * gets its own gallery page. `fallback` is the gradient shown
    * until the cover photo is added.
@@ -83,6 +85,8 @@ window.SITE = {
     },
     {
       slug: "weddings",
+      // Turned off until it has photos: delete this line to show it again.
+      hidden: true,
       title: "Weddings",
       cover: "images/weddings/01.jpg",
       fallback: "radial-gradient(ellipse at 50% 35%, #8f7d6a 0%, #3a3128 50%, #0f0c0a 100%)",
@@ -90,6 +94,8 @@ window.SITE = {
     },
     {
       slug: "events",
+      // Turned off until it has photos: delete this line to show it again.
+      hidden: true,
       title: "Events",
       cover: "images/events/01.jpg",
       fallback: "radial-gradient(ellipse at 35% 45%, #8c6d3a 0%, #3a2c15 50%, #0f0b05 100%)",
