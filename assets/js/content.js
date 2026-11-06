@@ -33,7 +33,7 @@ window.SITE = {
     paragraphs: [
       "I'm Daniel Sankey, a photographer, filmmaker and multimedia designer based in Zanzibar, Tanzania.",
       "I turn ideas into cinematic stories: couples on the water, homes and hotels at their best, coastlines from the air, and people as they really are. Whatever the brief, I'm after the same thing: purposeful, emotionally resonant images with a bold visual identity.",
-      "I'm also the founder and creative director of The Tale Haus, the production studio behind work for clients including CRDB Bank, I&M Bank, Tanzania Commercial Bank, Johari Developers, Maku Zanzibar and Lyson Law Group.",
+      "I'm also the founder and creative director of The Tale Haus, a production company.",
     ],
     // What clients can book. Shown as a short list on the About page.
     services: ["Couples & engagements", "Lifestyle & portraits", "Commercial & real estate", "Aerial & drone", "Film"],
