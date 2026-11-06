@@ -159,7 +159,7 @@ svg { width: 18px; height: 18px; flex: none; }
     linear-gradient(transparent 70%, rgba(0, 0, 0, 0.35));
 }
 .is-open .slide.is-active .slide-media { transform: scale(1); }
-.panel .slide-media { transform: scale(1.06); }
+.panel .slide-media { transform: scale(1.06); background-position: center 15%, center; }
 .is-open .panel .slide-media { transform: scale(1); }
 
 .slide-text { padding: 0 var(--gutter); margin-top: 4vh; }
@@ -315,6 +315,11 @@ svg { width: 18px; height: 18px; flex: none; }
 .panel .slide-media::after { background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.1) 100%); }
 .panel .view-link { margin-top: 1rem; }
 
+.panel .services-title { margin: 2rem 0 0.8rem; font-size: 11px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+.services { list-style: none; padding: 0; margin: 0 0 1.6rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.services li { padding: 0.45rem 0.9rem; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--paper); }
+.panel .based { font-size: 13px; letter-spacing: 0.08em; }
+
 .contact-list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 0.9rem; font-size: 16px; }
 .contact-list a { display: inline-flex; align-items: center; gap: 0.8rem; color: var(--muted); }
 .contact-list a:hover { color: var(--paper); }
@@ -403,7 +408,7 @@ svg { width: 18px; height: 18px; flex: none; }
 .intro-pre,
 .intro-tag { font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--muted); animation: fade-in 1.4s var(--ease) both; }
 .intro-pre { animation-delay: 0.3s; }
-.intro-tag { animation-delay: 2s; }
+.intro-tag { animation-delay: 1.3s; }
 .intro-name { text-transform: uppercase; display: flex; font-family: var(--logo-font) !important; flex-wrap: wrap; justify-content: center; font-family: var(--serif); font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 300; letter-spacing: 0.35em; padding-left: 0.35em; }
 .intro-name span { display: inline-block; min-width: 0.3em; animation: resolve 1.6s var(--ease) both; }
 .intro-name span:nth-child(odd) { animation-delay: 0.7s; }
@@ -445,6 +450,9 @@ svg { width: 18px; height: 18px; flex: none; }
 }
 
 @media (max-width: 860px) {
+  /* About/Contact text runs over the photo on phones: a deeper, even shade keeps it readable. */
+  .panel .slide-media::after { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.78)); }
+  .panel .slide-media { background-position: 70% top, center; }
   /* Phones: still grain, so scrolling stays smooth on slower devices. */
   .grain { animation: none; }
   .gallery-head { padding-top: 100px; }

@@ -191,6 +191,8 @@
         <span class="slide-index">About</span>
         <h1>${esc(a.heading)}</h1>
         ${a.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}
+        ${a.services && a.services.length ? `<p class="services-title">What I shoot</p><ul class="services">${a.services.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+        ${c.location ? `<p class="based">Based in ${esc(c.location)}</p>` : ""}
         <a class="view-link" href="contact.html">Work with me ${icon.arrow}</a>
       </div>
     </section>`;
@@ -204,8 +206,8 @@
         <span class="slide-index">Contact</span>
         <h1>Let's tell your story.</h1>
         <ul class="contact-list">
-          ${c.email ? `<li><a href="mailto:${c.email}">${icon.mail}${esc(c.email)}</a></li>` : ""}
           ${c.whatsapp ? `<li><a href="https://wa.me/${c.whatsapp}" target="_blank" rel="noopener">${icon.whatsapp}WhatsApp ${esc(c.phone)}</a></li>` : ""}
+          ${c.email ? `<li><a href="mailto:${c.email}">${icon.mail}${esc(c.email)}</a></li>` : ""}
           ${c.phone ? `<li><a href="tel:${c.phone.replace(/[^\d+]/g, "")}">${icon.phone}Call ${esc(c.phone)}</a></li>` : ""}
           ${c.location ? `<li><a href="${c.mapUrl}" target="_blank" rel="noopener">${icon.pin}${esc(c.location)}</a></li>` : ""}
           ${S.social.instagram ? `<li><a href="${S.social.instagram}" target="_blank" rel="noopener">${icon.instagram}Instagram</a></li>` : ""}
@@ -293,11 +295,11 @@
   const root = document.documentElement;
   const open = () => requestAnimationFrame(() => root.classList.add("is-open"));
 
-  // Title card, shown once per visit on the home page.
+  // Title card, shown only on someone's first-ever visit to the home page.
   let seenIntro = true;
   try {
-    seenIntro = sessionStorage.getItem("intro") === "1";
-    sessionStorage.setItem("intro", "1");
+    seenIntro = localStorage.getItem("intro") === "1" || sessionStorage.getItem("intro") === "1";
+    localStorage.setItem("intro", "1");
   } catch (_) {}
 
   if (page === "home" && !seenIntro && !reduceMotion) {
@@ -319,7 +321,7 @@
       setTimeout(() => intro.remove(), 1200);
     };
     intro.addEventListener("click", finish);
-    setTimeout(finish, 3600);
+    setTimeout(finish, 2600);
   } else {
     open();
   }

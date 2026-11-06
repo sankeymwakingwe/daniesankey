@@ -9,7 +9,7 @@
 window.SITE = {
   // Shown in capitals as the logo in the middle of the nav, and on the title card.
   name: "DanieSankey",
-  tagline: "Photographer & Storyteller",
+  tagline: "Photographer & Filmmaker",
 
   contact: {
     email: "daniesankey@gmail.com",
@@ -17,8 +17,8 @@ window.SITE = {
     // WhatsApp number in international format, digits only ("" to hide).
     whatsapp: "255659936142",
     // Leave location "" to hide it; mapUrl opens when someone taps it.
-    location: "",
-    mapUrl: "",
+    location: "Zanzibar, Tanzania",
+    mapUrl: "https://maps.google.com/?q=Zanzibar,+Tanzania",
   },
 
   // Leave any link "" to hide it.
@@ -31,10 +31,14 @@ window.SITE = {
     image: "images/about.jpg",
     heading: "Every frame tells a tale.",
     paragraphs: [
-      "Write a short introduction here: who you are, what you shoot, and what you care about when you pick up a camera.",
-      "Add a second paragraph about your approach, the people and brands you've worked with, or where your work has been featured.",
+      "I'm Daniel Sankey, a photographer, filmmaker and multimedia designer based in Zanzibar, Tanzania.",
+      "I turn ideas into cinematic stories: couples on the water, homes and hotels at their best, coastlines from the air, and people as they really are. Whatever the brief, I'm after the same thing: purposeful, emotionally resonant images with a bold visual identity.",
+      "I'm also the founder and creative director of The Tale Haus, the production studio behind work for clients including CRDB Bank, I&M Bank, Tanzania Commercial Bank, Johari Developers, Maku Zanzibar and Lyson Law Group.",
     ],
+    // What clients can book. Shown as a short list on the About page.
+    services: ["Couples & engagements", "Lifestyle & portraits", "Commercial & real estate", "Aerial & drone", "Film"],
   },
+
 
   /*
    * Add `hidden: true` to a section to turn it off without deleting it.
