@@ -27,7 +27,7 @@ jobs:
       - name: Collect site files
         run: |
           mkdir _site
-          cp -r *.html assets images .nojekyll _site/
+          cp -r *.html assets images CNAME .nojekyll _site/
           # Stamp each deploy's version on the CSS/JS links so browsers never use a stale copy.
           sed -i "s/?v=dev/?v=${GITHUB_SHA::7}/g" _site/*.html
 

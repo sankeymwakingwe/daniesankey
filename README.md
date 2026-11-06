@@ -43,7 +43,7 @@ No build step. Open `index.html`, or run `npx serve .`
 ## Hosting
 
 Deployed to GitHub Pages by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) on every push.
-Live at **https://sankeymwakingwe.github.io/daniesankey/**
+Live at **https://daniesankey.thetale.haus** (the `CNAME` file holds the address; DNS is a `daniesankey` CNAME record on thetale.haus at Namecheap pointing to `sankeymwakingwe.github.io`). The old address, sankeymwakingwe.github.io/daniesankey, redirects there.
 
 One-time setup (repo owner):
 1. Settings → General → Danger Zone → **Change visibility** → Public (free Pages needs a public repo).
@@ -52,4 +52,4 @@ One-time setup (repo owner):
 
 ## Fonts
 
-The logo uses **Quincy CF** and the navigation and body text use **Sofia Pro**, both served by Adobe Fonts through the web kit "DanieSankey website" (`ann1gwy`) in your Adobe Fonts account. The kit only serves fonts on the domains listed in it (currently `sankeymwakingwe.github.io` and `localhost`). If you move the site to your own domain, add that domain to the kit at https://fonts.adobe.com/my_fonts#web_projects-section.
+The logo uses **Quincy CF** and the navigation and body text use **Sofia Pro**, both served by Adobe Fonts through the web kit "DanieSankey website (daniesankey.thetale.haus)" (`yzh4gtq`) in your Adobe Fonts account. The kit only serves fonts on the domains listed in it (currently `daniesankey.thetale.haus`, `sankeymwakingwe.github.io` and `localhost`). If you move the site to your own domain, add that domain to the kit at https://fonts.adobe.com/my_fonts#web_projects-section.
